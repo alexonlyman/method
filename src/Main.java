@@ -2,9 +2,9 @@ import java.time.LocalDate;
 
 public class Main {
     public static int checkYear(int year) {
-        int years = year % 4;
-        return years;
-
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+        //(currentYear % 4 == 0 && currentYear % 100 != 0) || currentYear % 400 == 0
+        return year;
     }
 
     public static int changeOs(String name, int year) {
@@ -16,24 +16,25 @@ public class Main {
         }
         if (name.equals("IOS")) {
             System.out.println("IOS");
-            return 1;
+
         } else {
             System.out.println("ANDROID");
         }
-        return 0;
 
 
+        return currentYear;
     }
 
-    public static int deliverToclient(int a, int b) {
-        if (a > 20) {
-            b++;
+    public static int deliverToclient(int distance) {
+        int day = 1;
+        if (distance > 20) {
+            day++;
         }
 
-        if (a > 60) {
-            b++;
+        if (distance > 60) {
+            day++;
         }
-        return b;
+        return day;
     }
 
 
@@ -45,14 +46,14 @@ public class Main {
 
         System.out.println(" задача 2 ");
 
-        String nameOs = "ANDROID";
-        int osYear = 2022;
+        String nameOs = "IOS";
+        int osYear = 2020;
         int clientOs = changeOs(nameOs, osYear);
 
         System.out.println(" задача 3 ");
         int deliveryDistance = 80;
         int deliveryDays = 1;
-        deliveryDays = deliverToclient(deliveryDistance,deliveryDays);
+        deliveryDays = deliverToclient(deliveryDistance);
         System.out.println("потребуется дней " + deliveryDays);
 
 
